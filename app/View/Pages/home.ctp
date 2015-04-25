@@ -8,7 +8,6 @@
         <meta charset="utf-8" />
 		<meta name="description" content="Coming Soon MF is a free simple and good looking under constrauction / coming soon html page"/>
 		<meta name="keywords" content="under construction, coming soon, html, css, page, template, free"/>
-        <link rel="stylesheet" href="style.css" />
         <title>My Roomi</title>
     </head>
     <body>
