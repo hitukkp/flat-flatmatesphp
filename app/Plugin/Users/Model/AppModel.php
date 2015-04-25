@@ -29,13 +29,13 @@
 App::uses('Model', 'Model');
 class AppModel extends Model
 {
-	private function _getFields( $fieldsType, $projectedFields, $filters )
+	public function _getFields( $fieldsType, $projectedFields, $filters )
     {
-        $fields = $this->getMapFields( $fieldsType, $projectedFields );
+        $fields = $this->_getMapFields( $fieldsType, $projectedFields );
         return $fields;
     }
 
-	private function _getMapFields( $type,  $projectedFields )
+	public function _getMapFields( $type,  $projectedFields )
     {
         $out = array();
 

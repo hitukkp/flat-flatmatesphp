@@ -1,5 +1,6 @@
 <?php
 App::uses('UsersAppController', 'Users.Controller');
+App::uses('UsersApiException','Users.');
 class UsersController extends UsersAppController{
     
     public $layout = false;
@@ -101,15 +102,14 @@ class UsersController extends UsersAppController{
                 //Throws the Exception if method is not there in the Class.
                 if(!method_exists($object, $method))
                 {
-                    throw new ContentApiException(array('method'),6);
+                    throw new UsersApiException( 'Please Contact API devloper', 10003 );
                 }
 
                 //Calls the method and expects the result.
                 $out = $object->$method( $args );
-                if(isset( $out['status'] ))
-                {
-                    $out = $out;
-                }
+                
+                $out = $this->standard_output($out);
+                
             } catch ( Exception $e )
             {
                 $out = $this->exception_output( $e );
@@ -140,7 +140,7 @@ class UsersController extends UsersAppController{
             
             if (empty($param1) || empty($param2)) 
             {
-                throw new ContentApiException( 'Version No and Resource Name must be provided', 1 );
+                throw new UsersApiException( 'Version No and Resource Name must be provided', 10000 );
             }
 
             $param1 = strtolower(trim($param1));
@@ -150,13 +150,13 @@ class UsersController extends UsersAppController{
             // check correct version
             if (!in_array($param1, $this->versions)) 
             {
-                throw new ContentApiException(array('version number'), 6);
+                throw new UsersApiException( 'Version No incorrect', 10001 );
             }
 
             //check resourses
             if (!in_array($param2, $this->resources)) 
             {
-                throw new ContentApiException(array('resource'), 6);
+                throw new UsersApiException( 'Wrong Resource passed', 10002 );
             }
             
         } catch (Exception $e){

@@ -1,6 +1,6 @@
 <?php
 App::uses('AppModel', 'Users.Model');
-class Textbook extends AppModel 
+class UsersModel extends AppModel 
 {
     public $name = "Users";
     public $useTable = 'users';
@@ -13,7 +13,6 @@ class Textbook extends AppModel
     			$type,
     			array(
     				'conditions'=> $conditions,
-    				'order' 	=> array('Textbook.id' => 'asc'),
                     'limit'     => $limit,
     				'joins'		=> $joins,
     				'fields' 	=> $fields
@@ -28,13 +27,13 @@ class Textbook extends AppModel
 		};
     }
 
-    public function saveUsers( $options )
+    public function saveUsers( $options, $validate = 'true' )
     {
         try
         {
             if( isset( $options ) )
             {
-                $result = $this->save( $options );
+                $result = $this->save( $options, $validate );
                 return $result;
             }else
             {
