@@ -176,13 +176,7 @@ class HousesBusinessLogic extends AppModel
             
             $outUsers = $obj->saveUsers( $userDetails, $validate = 'true' );
             
-            pr($outProp);
-            pr($outAvlbl);
-            pr($outPref);
-            pr($outUsers);
-
-            die;
-            return $out;
+            return $outProp['HouseDetails']['id'];
         }
         catch( Exception $e )
         {
