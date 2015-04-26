@@ -1,6 +1,5 @@
 <?php
 /*
- * Class TextbookApi
  * Handles Section related stuff
  * @author Hitesh Goel
  */

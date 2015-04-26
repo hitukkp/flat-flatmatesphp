@@ -2,8 +2,6 @@
 /**
  * Class ContentApiException
  * Handles exceptions thrown by api
- * @author Rajesh Pant<rajesh.pant@meritnation.com>
- * @created 22 July 2014
  */
 class UsersApiException extends Exception
 {

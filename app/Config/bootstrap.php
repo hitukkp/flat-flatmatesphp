@@ -71,6 +71,7 @@ Cache::config('default', array('engine' => 'File'));
  */
 CakePlugin::load('Roomi',array('bootstrap'=>true,'routes'=>true));
 CakePlugin::load('Users',array('bootstrap'=>true,'routes'=>true));
+CakePlugin::load('Houses',array('bootstrap'=>true,'routes'=>true));
 /**
  * You can attach event listeners to the request lifecycle as Dispatcher Filter. By default CakePHP bundles two filters:
  *
